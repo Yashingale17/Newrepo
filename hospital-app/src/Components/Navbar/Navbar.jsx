@@ -36,7 +36,7 @@ const Navbar = () => {
 
                             <div className='git'>
                                 <a
-                                    href='https://github.com/Yashingale17/HospitalPortal'><i class="fa-brands fa-github"></i></a>
+                                    href='https://github.com/Yashingale17/NewRepo.git'><i class="fa-brands fa-github"></i></a>
                             </div>
                         </div>
                     </div>
