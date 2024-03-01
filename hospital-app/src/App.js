@@ -8,6 +8,7 @@ import About from './Pages/About';
 import Services from './Pages/Services';
 import Department from './Pages/Department';
 import BookAppointment from './Pages/BookAppointment';
+import Login from './Pages/Login';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path='/Services' element={<Services/>}/>
         <Route path='/Department' element={<Department/>}/>
         <Route path='/BookAppointment' element={< BookAppointment/>}/>
+        <Route path='/Login' element={<Login/>}/>
       </Routes>
     </>
   );
