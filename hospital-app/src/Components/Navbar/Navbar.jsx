@@ -4,22 +4,9 @@ import './navbar.css'
 const Navbar = () => {
     const [activeSection, setActiveSection] = useState('Home');
 
-    const navbar = document.querySelector('.fixed-navbar');
-    const scrollUpThreshold = 50; // Adjust the threshold for activation if needed
-
-    window.addEventListener('scroll', () => {
-        const scrollY = window.scrollY; // Get scroll position
-
-        if (scrollY > scrollUpThreshold) {
-            navbar.classList.add('active');
-        } else {
-            navbar.classList.remove('active');
-        }
-    });
-
     return (
         <>
-            <header>
+            <header className='Stickey'>
                 <nav className="nav-second">
                     <div className='Nav-first'>
                         <div className='Container'>

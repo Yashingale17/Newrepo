@@ -3,20 +3,6 @@
   padding: 0px;
 }
 
-
-
-.Nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 10;
-  transition: background-color 0.3s ease-in-out; /* Smooth transition */
-}
-
-.Nav.active {
-    background-color: #fff; /* Or your desired navbar color on scroll */
-}
 /* Nav 1 */
 
 .Container {
@@ -24,6 +10,15 @@
   height: 30px;
   display: flex;
   padding-left: 60px;
+}
+
+/* Stickey NAV*/
+
+.Stickey {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 .phone {
@@ -34,7 +29,7 @@
 
 .mail {
   height: 30px;
-  width: 14%;
+  width: 17%;
   display: flex;
   align-items: center;
 }
@@ -89,6 +84,7 @@
   align-items: center;
   padding-left: 35px;
   padding-right: 20px;
+  height: 50px;
 }
 
 .logo-name span {
