@@ -1,12 +1,10 @@
 import React from 'react'
-import "./login.css";
-import { FaUser, FaLock } from "react-icons/fa";
-
+import Loginsignup from '../Components/Login/Loginsignup'
 
 const Login = () => {
   return (
     <div>
-      
+      <Loginsignup/>
     </div>
   )
 }

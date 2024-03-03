@@ -1,5 +1,53 @@
 .Hero-section {
     padding-top: 80px;
-    height: 800px;
     width: 100%;
+}
+
+.slider {
+    width: 1005; /* Adjust width as needed */
+    height: 480px; /* Adjust height as needed */
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .slide {
+    width: 200%; /* Adjust width to accommodate two images */
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex; /* To contain the images in a row */
+    animation: slideAnimation 6s infinite linear; /* Adjust duration as needed */
+  }
+  
+  .slide::before,
+  .slide::after {
+    content: '';
+    width: 50%; /* Adjust to evenly distribute images */
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background-size: cover;
+  }
+  
+  .slide::before {
+    left: 0;
+    background-image: url('../Images/H2.jpg');
+  }
+  
+  .slide::after {
+    left: 50%; /* Adjust to position the second image */
+    background-image: url('../Images/Innovating for Better Patient Care.png');
+  
+  @keyframes slideAnimation {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%); /* Slide from left to right */
+    }
+  }
 }

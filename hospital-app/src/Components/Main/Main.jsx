@@ -4,9 +4,14 @@ import './main.css'
 const Main = () => {
   return (
     <>
-        <body className="Hero-section">
-            <h1>Hello</h1>
-        </body>
+        <div className="Hero-section">
+          <hr/>
+          <div className="slider">
+            <div className="slide">
+            </div>
+          </div>
+        </div>
+        
     </>
   )
 }
