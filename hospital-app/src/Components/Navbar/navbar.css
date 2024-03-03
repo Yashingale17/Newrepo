@@ -136,7 +136,6 @@ li.active a {
   color: #000000;
 }
 
-.Login-register button {}
 
 .login-btn {
   display: inline-block; /* Allow text wrapping if needed */
