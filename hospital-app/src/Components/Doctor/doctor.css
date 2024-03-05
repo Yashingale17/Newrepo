@@ -1,0 +1,105 @@
+h1 {
+    padding-top: 80px;
+}
+
+.doctor-page {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .doctors {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .doctor {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+  
+  .doctor-image {
+    width: 100%;
+    height: 200px; /* Adjust height as needed */
+    background-size: cover;
+    cursor: pointer;
+  }
+  
+  .info {
+    padding: 10px;
+  }
+  
+  .info h2 {
+    margin-bottom: 5px;
+  }
+  
+  .info p {
+    margin: 0;
+    font-style: italic;
+  }
+  
+  /* Define background images for each doctor */
+  .doctor-image-1 {
+    background-image: url('../Images/doc1.jpg');
+  }
+  
+  .doctor-image-2 {
+    background-image:url('../Images/doc1.jpg');
+  }
+  
+  .doctor-image-3 {
+    background-image:url('../Images/doc1.jpg');
+  }
+  
+  .doctor-image-4 {
+    background-image:url('../Images/doc1.jpg');
+  }
+  
+  .doctor-image-5 {
+    background-image:url('../Images/doc1.jpg');
+  }
+  
+  .doctor-image-6 {
+    background-image:url('../Images/doc2.avif');
+  }
+  
+  .doctor-image-7 {
+    background-image:url('../Images/doc1.jpg');
+  }
+  
+  .doctor-image-8 {
+    background-image:url('../Images/doc3.jpg');
+  }
+  
+  .doctor-image-9 {
+    background-image:url('../Images/doc1.jpg');
+  }
+  
+  .doctor-image-10 {
+    background-image: url('../Images/doc1.jpg');
+  }
+  
+  .doctor-image-11 {
+    background-image: url('../Images/doc1.jpg');
+  }
+  
+  .doctor-image-12 {
+    background-image: url('../Images/doc1.jpg');
+  }
+  
+  .doctor-image-13 {
+    background-image: url('../Images/doc1.jpg');
+  }
+  
+  .doctor-image-14 {
+    background-image: url('../Images/doc1.jpg');
+  }
+  
+  .doctor-image-15 {
+    background-image: url('../Images/doc1.jpg');
+  }
+
+  

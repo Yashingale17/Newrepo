@@ -1,9 +1,11 @@
 import React from 'react'
+import Doctorpage from '../Components/Doctor/Doctorpage'
+
 
 const Doctor = () => {
   return (
     <div>
-      <h1>doctor</h1>
+      <Doctorpage/>
     </div>
   )
 }
