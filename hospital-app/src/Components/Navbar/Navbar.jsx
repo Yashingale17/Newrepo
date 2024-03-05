@@ -2,6 +2,13 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import './navbar.css'
 const Navbar = () => {
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth" // Add smooth scrolling behavior
+        });
+    };
+
     const [activeSection, setActiveSection] = useState('Home');
 
     return (
@@ -51,12 +58,12 @@ const Navbar = () => {
                             <div className='img'></div>
                         </div>
                         <ul className="nav-links">
-                            <li className={activeSection === 'Home' ? 'active' : ''} > <Link to="/" onClick={() => setActiveSection('Home')}>Home</Link></li>
-                            <li className={activeSection === 'About' ? 'active' : ''} > <Link to="/About" onClick={() => setActiveSection('About')}>About</Link></li>
-                            <li className={activeSection === 'Doctor' ? 'active' : ''} > <Link to="/Doctor" onClick={() => setActiveSection('Doctor')}>Doctor</Link></li>
-                            <li className={activeSection === 'Services' ? 'active' : ''} > <Link to="/Services" onClick={() => setActiveSection('Services')}>Services</Link></li>
-                            <li className={activeSection === 'Department' ? 'active' : ''} > <Link to="/Department" onClick={() => setActiveSection('Department')}>Department</Link></li>
-                            <li className={activeSection === 'BookAppointment' ? 'active' : ''} > <Link to="/BookAppointment" onClick={() => setActiveSection('BookAppointment')}>BookAppointment</Link></li>
+                            <li onClick={scrollToTop} className={activeSection === 'Home' ? 'active' : ''} > <Link to="/" onClick={() => setActiveSection('Home')}>Home</Link></li>
+                            <li onClick={scrollToTop} className={activeSection === 'About' ? 'active' : ''} > <Link to="/About" onClick={() => setActiveSection('About')}>About</Link></li>
+                            <li onClick={scrollToTop} className={activeSection === 'Doctor' ? 'active' : ''} > <Link to="/Doctor" onClick={() => setActiveSection('Doctor')}>Doctor</Link></li>
+                            <li onClick={scrollToTop} className={activeSection === 'Services' ? 'active' : ''} > <Link to="/Services" onClick={() => setActiveSection('Services')}>Services</Link></li>
+                            <li onClick={scrollToTop} className={activeSection === 'Department' ? 'active' : ''} > <Link to="/Department" onClick={() => setActiveSection('Department')}>Department</Link></li>
+                            <li onClick={scrollToTop} className={activeSection === 'BookAppointment' ? 'active' : ''} > <Link to="/BookAppointment" onClick={() => setActiveSection('BookAppointment')}>BookAppointment</Link></li>
                         </ul>
                         <div className="Login-register">
                             <Link to="/Login" className='login-btn'>Login</Link>
@@ -64,11 +71,8 @@ const Navbar = () => {
                     </div>
                 </nav>
             </header>
-
-            <body>
-                
-            </body>
         </>
+
 
     )
 }

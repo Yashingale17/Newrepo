@@ -1,0 +1,42 @@
+.service-body {
+    padding-top: 80px;
+}
+
+.service-page {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .service {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .service-image {
+    width: 100%;
+    height: 200px; /* Adjust height as needed */
+    background-size: cover;
+    cursor: pointer;
+  }
+  
+  .info {
+    padding: 10px;
+  }
+  
+  .info h2 {
+    margin-bottom: 5px;
+    cursor: pointer;
+  }
+  
+  .details {
+    margin-top: 10px;
+  }
+  

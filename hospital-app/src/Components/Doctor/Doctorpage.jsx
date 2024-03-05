@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './doctor.css'
 
 const Doctorpage = () => {
@@ -30,8 +30,10 @@ const Doctorpage = () => {
                         <div className={`doctor-image doctor-image-${doctor.id}`}></div>
                         <div className="info">
                             <h2>{doctor.name}</h2>
-                            <p>{doctor.specialty}</p>
-                            <p>Experience: {doctor.experience}</p>
+                            <div className="details">
+                                <p>Specialty: {doctor.specialty}</p>
+                                <p>Experience: {doctor.experience}</p>
+                            </div>
                         </div>
                     </div>
                 ))}
