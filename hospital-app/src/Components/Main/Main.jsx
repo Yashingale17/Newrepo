@@ -3,17 +3,11 @@ import './main.css'
 
 const Main = () => {
   return (
-    <>
-        <div className="Hero-section">
-          <hr/>
-          <div className="slider">
-            <div className="slide">
-            </div>
-          </div>
-        </div>
-        
-    </>
+    <div>
+      <h1 className='hii'>Hello</h1>
+    </div>
   )
 }
 
 export default Main
+

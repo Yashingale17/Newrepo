@@ -1,9 +1,10 @@
 import React from 'react'
+import Appointment from '../Components/Appointment/Appointment'
 
 const BookAppointment = () => {
   return (
     <div>
-      <h1>Book</h1>
+      <Appointment/>
     </div>
   )
 }

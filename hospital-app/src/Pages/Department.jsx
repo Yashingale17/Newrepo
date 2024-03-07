@@ -1,9 +1,10 @@
 import React from 'react'
+import Departmentpage from '../Components/Department/Departmentpage'
 
 const Department = () => {
   return (
     <div>
-      <h1>Department</h1>
+      <Departmentpage/>
     </div>
   )
 }

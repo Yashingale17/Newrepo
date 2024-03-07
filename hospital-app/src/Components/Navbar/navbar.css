@@ -109,7 +109,7 @@
 .nav-links {
   list-style-type: none;
   display: flex;
-  width: 55%;
+  width: 50%;
 }
 
 .nav-links li {
@@ -150,8 +150,29 @@ li.active a {
   transition: background-color 0.2s ease-in-out; /* Add hover effect */
 }
 
-.Login-register button:hover {
+.Login-register .login-btn:hover {
+  background-color: #0056b3;
+  /* Change background color on hover */
+} 
+
+.admin-btn {
+  margin-left: 20px;
+  display: inline-block; /* Allow text wrapping if needed */
+  padding: 6px 16px; /* Adjust padding for desired size */
+  border: none; /* Remove default border */
+  border-radius: 4px; /* Create rounded corners */
+  cursor: pointer; /* Indicate clickable behavior */
+  background-color: #3498db; /* Adjust background color */
+  color: #fff; /* Set text color to white */
+  font-weight: bold; /* Emphasize the text */
+  text-decoration: none; /* Remove default link underline */
+  transition: background-color 0.2s ease-in-out; /* Add hover effect */
+}
+
+.Login-register .admin-btn:hover {
   background-color: #0056b3;
   /* Change background color on hover */
 }
+
+
 
