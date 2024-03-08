@@ -25,7 +25,7 @@ const Doctorpage = () => {
         <div className="doctor-page">
             <h1>Our Doctors</h1>
             <div className="doctors">
-                {doctors.map(doctor => (
+                { doctors.map(doctor => (
                     <div className="doctor" key={doctor.id}>
                         <div className={`doctor-image doctor-image-${doctor.id}`}></div>
                         <div className="info">

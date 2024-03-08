@@ -1,5 +1,41 @@
-.service-body {
-    padding-top: 80px;
+.Service-Container {
+    margin-top: 80px;
 }
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+  }
+  
+  .header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+  }
+  
+  .service {
+    width: calc(33% - 40px);
+    background-color: #f1f1f1;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+  }
+  
+  .footer {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
 
   

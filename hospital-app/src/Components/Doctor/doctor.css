@@ -103,3 +103,16 @@ h1 {
 .doctor-image-15 {
   background-image: url('../Images/doctor15.webp');
 }
+
+/* DoctorSearchBar.css */
+
+/* DoctorSearchBar.css */
+.search-bar {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  width: 100%; /* Ensures the search bar fills its container */
+}
+
