@@ -4,6 +4,10 @@
   padding: 20px;
 }
 
+.doctor-page H1 {
+  background-color: #ededed;
+}
+
 .doctors {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -101,15 +105,29 @@
   background-image: url('../Images/doctor15.webp');
 }
 
-/* DoctorSearchBar.css */
-
-/* DoctorSearchBar.css */
-.search-bar {
-  padding: 8px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-bottom: 20px;
-  width: 100%; /* Ensures the search bar fills its container */
+.Doctor-to-department {
+  display: inline-block;
+    /* Allow text wrapping if needed */
+    padding: 6px 16px;
+    /* Adjust padding for desired size */
+    border: none;
+    /* Remove default border */
+    border-radius: 4px;
+    /* Create rounded corners */
+    cursor: pointer;
+    /* Indicate clickable behavior */
+    background-color: #3498db;
+    /* Adjust background color */
+    color: #fff;
+    /* Set text color to white */
+    font-weight: bold;
+    /* Emphasize the text */
+    text-decoration: none;
+    /* Remove default link underline */
+    transition: background-color 0.2s ease-in-out;
+    /* Add hover effect */
+    margin-top: 8px;
 }
+
+
 

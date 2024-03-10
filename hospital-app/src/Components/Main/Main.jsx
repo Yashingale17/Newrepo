@@ -22,7 +22,7 @@ const Main = () => {
               <div className="Home-page-boxes">
                 <h2>Specialities</h2>
                 <p>
-                  At Sujay Hospital, we offer a wide range of medical specialities to cater to your healthcare needs. From orthopaedic to oncology, and from neurology to gastroenterology, our team of highly skilled doctors is here to take care of you.
+                  At <strong>Hospital CareHub</strong>, we offer a wide range of medical specialities to cater to your healthcare needs. From orthopaedic to oncology, and from neurology to gastroenterology, our team of highly skilled doctors is here to take care of you.
                 </p>
                 <div className="home-to">
                 <Link to="/Department" className='Hometo-department'>Explore Specialties</Link>
@@ -31,7 +31,7 @@ const Main = () => {
               <div className="Home-page-boxes">
               <h2>​Patient Management through Digitalization</h2>
                 <p>
-                We're enhancing patient care with paperless medical records, ensuring swift access to accurate information across departments at Sujay Hospital. Our goal is to deliver personalised healthcare services with improved infrastructure.
+                We're enhancing patient care with paperless medical records, ensuring swift access to accurate information across departments at Hospital CareHub. Our goal is to deliver personalised healthcare services with improved infrastructure.
                 </p>
                 <div className="home-to">
                 <Link to="/About" className='Hometo-department'>Learn More</Link>
