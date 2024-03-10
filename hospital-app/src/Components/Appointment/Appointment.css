@@ -1,14 +1,22 @@
-
-
+.appointment-container {
+  background-color: gray;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-image: url('../Images/appointment.jpg');
+  background-size: cover;
+}
 .appointment-form {
-    max-width: 400px;
+    width: 450px;
     height: auto;
     margin: 0 auto;
-    background-color: #fff;
+    margin-top: 30px;
+    background-color: #ffffff27;
     border-radius: 8px;
+    padding-top: 25px;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 10px;
+    padding-bottom: 25px;
   }
   
   .appointment-form h2 {
