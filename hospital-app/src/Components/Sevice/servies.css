@@ -1,41 +1,137 @@
-.Service-Container {
-    margin-top: 80px;
+.image-content {
+  width: 100%;
+  height: 620px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-  }
-  
-  .header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .services {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 20px;
-  }
-  
-  .service {
-    width: calc(33% - 40px);
-    background-color: #f1f1f1;
-    padding: 20px;
-    margin: 10px;
-    text-align: center;
-  }
-  
-  .footer {
-    background-color: #4CAF50;
-    color: white;
-    padding: 20px;
-    text-align: center;
-  }
-  
+.service-img {
+  background-image: url('../Images/service.jpg');
+  background-size: cover;
+  height: 80%;
+  width: 45%;
+  border: 4px solid #232f3e;
+}
 
-  
+.service-para {
+  margin-right: -100px;
+  position: relative;
+  z-index: 1px;
+  height: 50%;
+  width: 35%;
+}
+
+.Service-title H2 {
+  color: #c2274b;
+  height: 50px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.service-page-para {
+  color: #fff;
+  background-color: #2b266b;
+  height: 280px;
+  width: 100%;
+}
+
+.service-para-title {
+  text-align: center;
+  padding-top: 20px;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.div-section-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-main-para {
+  margin-top: 20px;
+  width: 80%;
+  height: 80%;
+}
+
+.Service-type-container {
+  height: 700px;
+  width: 100%;
+}
+
+.service-type-contentbox1,
+.service-type-contentbox3,
+.service-type-contentbox2 {
+  height: 200px;
+  width: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contentbox1-service1 {
+  background-image: url('../Images/s1.webp');
+  background-size: cover;
+  height: 230px;
+  width: 350px;
+}
+
+.contentbox1-service2 {
+  background-image: url('../Images/s2.webp');
+  background-size: cover;
+  height: 210px;
+  width: 350px;
+}
+
+.contentbox1-service3 {
+  background-image: url('../Images/3.webp');
+  background-size: cover;
+  height: 210px;
+  width: 350px;
+}
+
+.contentbox1-service4 {
+  background-image: url('../Images/s4.webp');
+  background-size: cover;
+  height: 210px;
+  width: 350px;
+}
+
+.contentbox1-service5 {
+  background-image: url('../Images/s5.webp');
+  background-size: cover;
+  height: 210px;
+  width: 350px;
+}
+
+.contentbox1-service6 {
+  background-image: url('../Images/s6.webp');
+  background-size: cover;
+  height: 210px;
+  width: 350px;
+}
+
+.contentbox1-service7 {
+  background-image: url('../Images/s7.webp');
+  background-size: cover;
+  height: 210px;
+  width: 350px;
+}
+
+.contentbox1-service8 {
+  background-image: url('../Images/s8.webp');
+  background-size: cover;
+  height: 210px;
+  width: 350px;
+}
+
+.contentbox1-service9 {
+  background-image: url('../Images/s9.webp');
+  background-size: cover;
+  height: 210px;
+  width: 350px;
+}

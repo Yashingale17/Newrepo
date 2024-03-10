@@ -4,14 +4,12 @@ import './About.css'
 const Aboutpage = () => {
     return (
         <div className='About-content'>
-            <h1>About Hospital CareHub</h1>
+            <h1 className='About-hospital'>About Hospital CareHub</h1>
             <div className='about-section'>
                 <section className='Section-body'>
                     <div className='Aouut-theory'>
                         <p>
-                            <strong className='title'>
-                                Here to redefine patient care!
-                            </strong>
+                            <strong className='title'>Here to redefine patient care!</strong>
                         </p>
 
                         <p>
@@ -45,8 +43,7 @@ const Aboutpage = () => {
                     <div className='vision-para'>
                         <p><strong className='Mission-line'>Vision</strong></p>
                         <p className='Mission-line2'>
-                            To revolutionize our service offerings with the help of the latest and finest advanced technologies; to thrive on serving mankind for exemplary clinical outcomes – nationally
-                            & internationally.
+                            To revolutionize our service offerings with the help of the latest and finest advanced technologies; to thrive on serving mankind for exemplary clinical outcomes – nationally & internationally.
                         </p>
                     </div>
                 </div>
@@ -78,8 +75,6 @@ const Aboutpage = () => {
                 </div>
             </div>
         </div>
-
-
     )
 }
 

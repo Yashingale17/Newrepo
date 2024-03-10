@@ -1,5 +1,4 @@
 .About-content {
-  margin-top: 30px;
   text-align: center;
 }
 
@@ -10,15 +9,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
 }
 
 .Aouut-theory {
   height: 380px;
-  width: 550px;
+  width: 650px;
   background-image: linear-gradient(white, rgb(240, 238, 238), rgb(233, 231, 231), rgb(235, 235, 235));
   padding: 10px;
   box-shadow: 30px 30px 20px rgba(0, 0, 0, .2);
+  margin-right: -100px;
+  position: relative;
+  z-index: 1px;
 }
 
 .image {
@@ -27,6 +28,7 @@
   background-image: url('../Images/Aboutimg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  border: 3px solid black
 }
 
 .Aouut-theory p {
@@ -80,7 +82,7 @@
 
 .mission-para,
 .vision-para {
-  padding: 5px;
+ 
   width: 70%;
   height: 100%;
 }
@@ -129,7 +131,7 @@
   text-align: left;
   padding: 10px;
   box-shadow: -30px 30px 20px rgba(0, 0, 0, .2);
-  height: 180px;
+  height: 195px;
   width: 100%;
 }
 
@@ -140,5 +142,11 @@
 
 .value-contant .core-para {
   margin-top: 20px;
+}
+
+.About-hospital {
+  color: rgb(213, 0, 0);
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
