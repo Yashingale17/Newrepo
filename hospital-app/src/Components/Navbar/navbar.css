@@ -95,25 +95,26 @@
   display: flex;
   align-items: center;
   height: 50px;
-  width: 35%;
+  width: 30%;
 }
 
 .img {
   background-image: url("../Images/12.png");
   background-size: cover;
-  height: 50px;
-  width: 35%;
+  height: 35px;
+  width: 30%;
+  cursor: pointer;
 }
 
 .nav-links {
   list-style-type: none;
   display: flex;
-  width: 50%;
+  width: 55%;
 }
 
 .nav-links li {
   font-weight: 600;
-  margin-right: 20px;
+  margin-right: 12px;
   color: black;
   padding-left: 30px;
 }
@@ -172,6 +173,10 @@ li.active a {
   background-color: #0056b3;
   /* Change background color on hover */
 }
+
+
+
+
 
 
 

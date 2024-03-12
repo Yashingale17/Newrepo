@@ -10,6 +10,9 @@ import Department from './Pages/Department';
 import BookAppointment from './Pages/BookAppointment';
 import Login from './Pages/Login';
 import Footer from './Components/Footer/Footer';
+import Reportpage from './Pages/Reportpage';
+import Admin from './Pages/Admin';
+
 
 function App() {
   return (
@@ -21,8 +24,10 @@ function App() {
         <Route path='/Doctor' element={<Doctor/>}/>
         <Route path='/Services' element={<Services/>}/>
         <Route path='/Department' element={<Department/>}/>
+        <Route path='/Reportpage' element={<Reportpage/>}/>
         <Route path='/BookAppointment' element={< BookAppointment/>}/>
         <Route path='/Login' element={<Login/>}/>
+        <Route path='/Admin' element={<Admin/>}/>
       </Routes>
       <Footer/>
     </>

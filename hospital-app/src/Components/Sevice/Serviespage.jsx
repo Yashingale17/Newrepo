@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './servies.css'
+
 
 
 const Serviespage = () => {
@@ -23,6 +24,11 @@ const Serviespage = () => {
                 </div>
                 <div className='service-img'></div>
             </div>
+
+            <div className="report-billing-section">
+                
+            </div>
+
             <div className='Service-type-container'>
                 <div className="service-type-contentbox1">
                     <div className="contentbox1-service1"></div>

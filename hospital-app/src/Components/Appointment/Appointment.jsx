@@ -27,6 +27,8 @@ const Appointment = () => {
         console.log(formData);
     };
 
+    
+
     return (
         <div className="appointment-container">
             <div className='Appointment-container'>
