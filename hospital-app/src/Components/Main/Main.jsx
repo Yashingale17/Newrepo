@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import {useLocation , Link } from 'react-router-dom'
 import './main.css'
 import { CiStar } from "react-icons/ci";
 import { FaStethoscope } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 
 const Main = () => {
+
+  const location = useLocation()
 
   return (
     <div className='Home-container'>
@@ -14,7 +16,7 @@ const Main = () => {
           <div className="image-content-box">
             <div className="image-content-box-title">
               <div className="title-box-image-content">
-                The Right Care Starts Here!
+                The Right Care Starts Here! 
               </div>
             </div>
 

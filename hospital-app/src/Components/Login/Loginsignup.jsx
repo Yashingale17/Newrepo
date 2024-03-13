@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './login.css'
 import { FaUser, FaLock } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
+import Axios from 'axios'
 
 const Loginsignup = () => {
 
@@ -17,7 +18,6 @@ const Loginsignup = () => {
   return (
     <>
       <div className="login-signup">
-        {showLoginForm && (
           <div className="backgroung-img">
             <div className="login-contaier">
               <h1>Login</h1>
@@ -46,40 +46,6 @@ const Loginsignup = () => {
               </div>
             </div>
           </div>
-        )}
-        {!showLoginForm && (
-          <div className="backgroung-img">
-            <div className="login-contaier">
-              <h1>Register-User</h1>
-              <div className="input-box">
-                <input className='input' type='text' placeholder='Username' required/>
-                <FaUser className='icon'/>
-              </div>
-              <div className="input-box">
-                <input className='input' type='email' placeholder='Email' required />
-                <IoMdMail className='icon'/>
-              </div>
-              <div className="input-box">
-                <input className='input' type='password' placeholder='password' required />
-                <FaLock className='icon'/>
-              </div>
-              <div className="remember-forget">
-                <label>
-                  <input type="checkbox" /> Remember me
-                </label>
-              </div>
-              <button type="submit">Sign up</button>
-              <div className="Registet-link">
-                <p>
-                  Already have an account?{' '}
-                  <a onClick={toggleForm}>
-                    <strong>Login</strong>
-                  </a>
-                </p>
-              </div>
-            </div>
-          </div>
-        )}
       </div>
     </>
   )

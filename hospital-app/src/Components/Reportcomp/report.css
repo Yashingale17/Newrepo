@@ -1,75 +1,117 @@
+.report-container {
+  width: 100%;
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+.report-page h1 {
+  margin-bottom: 20px;
+}
+
 .report-page {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  h1 {
-    font-size: 24px;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  form {
-    margin-bottom: 20px;
-  }
-  
-  label {
-    font-weight: bold;
-  }
-  
-  input[type="text"],
-  input[type="password"] {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  button[type="submit"] {
-    padding: 10px 15px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button[type="submit"]:hover {
-    background-color: #0056b3;
-  }
-  
-  .error {
-    color: red;
-  }
-  
-  .report {
-    background-color: #f9f9f9;
-    padding: 20px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .report p {
-    margin-bottom: 10px;
-  }
-  
-  .report button {
-    padding: 8px 12px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .report button:hover {
-    background-color: #0056b3;
-  }
-  
-  .report button:active {
-    background-color: #0056b3;
-  }
-  
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form div {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+  color: #555;
+}
+
+input[type="text"],
+input[type="password"] {
+  padding: 12px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.error {
+  color: red;
+  margin-top: 15px;
+}
+
+.patient-details {
+  margin-bottom: 30px; /* Add margin bottom here */
+}
+
+.patient-details p {
+  margin-bottom: 15px;
+}
+
+.reports-list {
+  margin-top: 30px;
+}
+
+.report {
+  background-color: #fff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+  transition:box-shadow 0.3s ease;
+}
+
+.reeeee {
+  margin-top: 20px;
+  padding-bottom: 5px;
+}
+
+.report:hover {
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.report p {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.report button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.report button:hover {
+  background-color: #218838;
+}
+

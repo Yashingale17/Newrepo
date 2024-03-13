@@ -11,7 +11,10 @@ import BookAppointment from './Pages/BookAppointment';
 import Login from './Pages/Login';
 import Footer from './Components/Footer/Footer';
 import Reportpage from './Pages/Reportpage';
-import Admin from './Pages/Admin';
+import NewUser from './Pages/NewUser';
+
+
+
 
 
 function App() {
@@ -27,7 +30,8 @@ function App() {
         <Route path='/Reportpage' element={<Reportpage/>}/>
         <Route path='/BookAppointment' element={< BookAppointment/>}/>
         <Route path='/Login' element={<Login/>}/>
-        <Route path='/Admin' element={<Admin/>}/>
+        <Route path='/NewUser' element={<NewUser/>}/>
+
       </Routes>
       <Footer/>
     </>
