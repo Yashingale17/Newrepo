@@ -2,18 +2,27 @@ import React, { useState } from 'react'
 import './login.css'
 import { FaUser, FaLock } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
-import Axios from 'axios'
+import axios from "axios"
+
 
 const Loginsignup = () => {
 
-  const [showLoginForm, setShowLoginForm] = useState(true); // State to toggle login form visibility
-  const [showRegisterForm, setShowRegisterForm] = useState(false); // State to toggle register form visibility
+  const [Username,setUsername]= useState('')
+  const [Password,setPassword]= useState('')
 
-  // Function to toggle between login and register forms
-  const toggleForm = () => {
-    setShowLoginForm(!showLoginForm);
-    setShowRegisterForm(!showRegisterForm);
-  };
+  async function Submit(e) {
+    e.preventDefault();
+
+    try {
+      await axios.post("http://localhost/4000/",{
+        Username,Password
+      })
+
+    } catch (e) {
+      console.log(e)
+    }
+    
+  }
 
   return (
     <>
@@ -22,11 +31,11 @@ const Loginsignup = () => {
             <div className="login-contaier">
               <h1>Login</h1>
               <div className="input-box">
-                <input className='input' type='text' placeholder='Username' required/>
+                <input className='input' type='text' onClick={(e)=>{setUsername(e.target.value)}} placeholder='Username' required/>
                 <FaUser className='icon'/>
               </div>
               <div className="input-box">
-                <input className='input' type='password' placeholder='password' required />
+                <input className='input' type='password' onClick={(e)=>{setPassword(e.target.value)}} placeholder='password' required />
                 <FaLock className='icon'/>
               </div>
               <div className="remember-forget">
@@ -35,11 +44,11 @@ const Loginsignup = () => {
                 </label>
                 <a href="#">Forget password</a>
               </div>
-              <button type="submit">Login</button>
+              <button type='submit' onClick={Submit}>Login</button>
               <div className="Registet-link">
                 <p>
-                  Don't have an account?{' '}
-                  <a onClick={toggleForm}>
+                  Don't have an account?
+                  <a>
                     <strong>Register here</strong>
                   </a>
                 </p>

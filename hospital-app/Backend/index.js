@@ -28,3 +28,19 @@ app.listen(port,(error) => {
         console.log("Error :" +error)
     }
 })
+
+const newSchema = new mongoose.Schema({
+    Username:{
+        type:String,
+        require:true
+    },
+    Password:{
+        type:String,
+        require:true
+    }
+
+})
+
+const collection = mongoose.model("collection",newSchema)
+
+module.exports=collection

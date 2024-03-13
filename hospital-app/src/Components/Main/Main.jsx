@@ -16,7 +16,7 @@ const Main = () => {
           <div className="image-content-box">
             <div className="image-content-box-title">
               <div className="title-box-image-content">
-                The Right Care Starts Here! 
+                The  { location.state.Id}Right Care Starts Here! 
               </div>
             </div>
 
