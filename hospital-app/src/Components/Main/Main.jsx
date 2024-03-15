@@ -7,8 +7,6 @@ import { FaUser } from "react-icons/fa";
 
 const Main = () => {
 
-  const location = useLocation()
-
   return (
     <div className='Home-container'>
       <div className="home-img-container">
@@ -16,7 +14,7 @@ const Main = () => {
           <div className="image-content-box">
             <div className="image-content-box-title">
               <div className="title-box-image-content">
-                The  { location.state.Id}Right Care Starts Here! 
+                The Right Care Starts Here! 
               </div>
             </div>
 

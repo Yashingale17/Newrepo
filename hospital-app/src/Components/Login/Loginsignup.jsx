@@ -1,60 +1,75 @@
 import React, { useState } from 'react'
 import './login.css'
-import { FaUser, FaLock } from "react-icons/fa";
+import { FaLock } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
-import axios from "axios"
+import { Link } from 'react-router-dom';
+import { auth } from '../../firebase';
+import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
+import { signInWithEmailAndPassword} from 'firebase/auth';
 
 
 const Loginsignup = () => {
 
-  const [Username,setUsername]= useState('')
-  const [Password,setPassword]= useState('')
+  const navigateHome = useNavigate();
 
-  async function Submit(e) {
+  const [UserSignUp, setUserSignup] = useState({
+     email: "", password: ""
+  });
+
+  const handleChange = (e) => {
+    setUserSignup({ ...UserSignUp, [e.target.name]: e.target.value })
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-
-    try {
-      await axios.post("http://localhost/4000/",{
-        Username,Password
-      })
-
-    } catch (e) {
-      console.log(e)
+    if (!UserSignUp.email || !UserSignUp.password) {
+      return toast.error("Fill all filds")
     }
-    
+    else {
+      signInWithEmailAndPassword
+        (
+          auth,
+          UserSignUp.email,
+          UserSignUp.password
+        )
+        .then(async(res) => {
+          navigateHome('/');
+
+        })
+        .catch((err) => toast.error(err.message))
+    }
   }
 
   return (
     <>
       <div className="login-signup">
-          <div className="backgroung-img">
+        <div className="backgroung-img">
+          <form>
             <div className="login-contaier">
               <h1>Login</h1>
               <div className="input-box">
-                <input className='input' type='text' onClick={(e)=>{setUsername(e.target.value)}} placeholder='Username' required/>
-                <FaUser className='icon'/>
+                <input autoComplete='off' className='input' type='email' value={UserSignUp.email} onChange={handleChange} name='email' placeholder='Email' required />
+                <IoMdMail className='icon' />
               </div>
               <div className="input-box">
-                <input className='input' type='password' onClick={(e)=>{setPassword(e.target.value)}} placeholder='password' required />
-                <FaLock className='icon'/>
+                <input autoComplete='off' className='input' type='password' value={UserSignUp.password} name='password' onChange={handleChange}
+                  placeholder='password' required />
+                <FaLock className='icon' />
               </div>
-              <div className="remember-forget">
-                <label>
-                  <input type="checkbox" /> Remember me
-                </label>
-                <a href="#">Forget password</a>
-              </div>
-              <button type='submit' onClick={Submit}>Login</button>
+              <button type='submit' onClick={handleSubmit}>Login</button>
               <div className="Registet-link">
                 <p>
                   Don't have an account?
-                  <a>
-                    <strong>Register here</strong>
-                  </a>
+                  <Link to="/Signup">
+                    <strong> Sign Up</strong>
+                  </Link>
                 </p>
               </div>
             </div>
-          </div>
+
+          </form>
+        </div>
       </div>
     </>
   )

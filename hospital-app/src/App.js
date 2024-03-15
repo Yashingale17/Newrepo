@@ -1,7 +1,7 @@
 
 import './App.css';
 import Navbar from './Components/Navbar/Navbar';
-import { BrowserRouter as Router, Link, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Link, Routes, Route, Form } from 'react-router-dom';
 import Doctor from './Pages/Doctor';
 import Home from './Pages/Home';
 import About from './Pages/About';
@@ -11,16 +11,32 @@ import BookAppointment from './Pages/BookAppointment';
 import Login from './Pages/Login';
 import Footer from './Components/Footer/Footer';
 import Reportpage from './Pages/Reportpage';
-import NewUser from './Pages/NewUser';
-
-
-
+import Signup from './Pages/Signup';
+import { Toaster } from 'react-hot-toast';
+import { useEffect, useState } from 'react';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from './firebase';
 
 
 function App() {
+
+  const [userName , setUserName] = useState("")
+
+  useEffect(() => {
+    auth.onAuthStateChanged(( user) => {
+      if(user) {
+        setUserName(user.displayName);
+      }
+      else (
+        setUserName("")
+      )
+    })
+  },[])
+
+
   return (
     <>
-      <Navbar/>
+      <Navbar userName={userName}/>
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/About' element={<About/>}/>
@@ -30,9 +46,9 @@ function App() {
         <Route path='/Reportpage' element={<Reportpage/>}/>
         <Route path='/BookAppointment' element={< BookAppointment/>}/>
         <Route path='/Login' element={<Login/>}/>
-        <Route path='/NewUser' element={<NewUser/>}/>
-
+        <Route path='/Signup' element={<Signup/>}/>
       </Routes>
+      <Toaster/>
       <Footer/>
     </>
   );

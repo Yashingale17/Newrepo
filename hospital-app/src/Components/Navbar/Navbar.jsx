@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import './navbar.css'
 
-const Navbar = () => {
+const Navbar = ({ userName }) => {
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
@@ -71,8 +71,8 @@ const Navbar = () => {
                             <li onClick={scrollToTop} className={activeSection === 'BookAppointment' ? 'active' : ''} > <Link to="/BookAppointment" onClick={() => setActiveSection('BookAppointment')}>BookAppointment</Link></li>
                         </ul>
                         <div className="Login-register">
+                            <span>{userName}</span>
                             <Link to="/Login" className='login-btn'>Login</Link>
-                            <Link to="/NewUser" className='admin-btn'>Sighup</Link>
                         </div>
                     </div>
                 </nav>

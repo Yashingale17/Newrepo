@@ -1,46 +1,78 @@
-const port = 4000;
-const express = require('express');
-const { JsonWebTokenError } = require('jsonwebtoken');
-const app = express();
-const mongoose = require('mongoose');
-const jwt = require('jsonwebtoken');
-const multer = require('multer');
-const path = require('path');
-const cors = require('cors');
-const { error } = require('console');
+const express = require ('express')
+const mongoose = require ('mongoose')
+const bodyParser = require('body-parser');
+const cors = require('cors'); // Enable CORS for frontend requests
+const bcrypt = require('bcrypt'); // For secure password hashing
+const validator = require('validator'); // For basic password validation
 
+const app = express()
 
-app.use(express.json());
-app.use(cors());
+mongoose.connect('mongodb://localhost:27017/Hospital')
 
-
-mongoose.connect("mongodb+srv://yashingale74:23h9bsmYhWbCDyT3@cluster0.plyucsf.mongodb.net/")
-
-app.get("/",(req,res) => {
-    res.send("Express is Running")
-})
-
-app.listen(port,(error) => {
-    if (!error) {
-        console.log("Server running on port" +port)
+const userSchema = new mongoose.Schema({
+  username: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+    validate: {
+      validator: validator.isEmail,
+      message: 'Invalid email format'
     }
-    else {
-        console.log("Error :" +error)
+  },
+  password: {
+    type: String,
+    required: true,
+    minlength: 8, // Enforce a minimum password length
+    validate: {
+      validator: validator.isStrongPassword,
+      message: 'Password must be at least 8 characters long and contain a mix of uppercase, lowercase, numbers, and symbols'
     }
-})
+  }
+});
 
-const newSchema = new mongoose.Schema({
-    Username:{
-        type:String,
-        require:true
-    },
-    Password:{
-        type:String,
-        require:true
+// Hash password before saving user
+userSchema.pre('save', async function(next) {
+  if (this.isModified('password')) {
+    const salt = await bcrypt.genSalt(10);
+    this.password = await bcrypt.hash(this.password, salt);
+  }
+  next();
+});
+
+// Create the User model
+const User = mongoose.model('User', userSchema);
+
+// Configure body-parser middleware
+app.use(bodyParser.json());
+
+app.use(cors({
+  origin: ['http://localhost:3000'] 
+}));
+
+app.post('/Signup', async (req, res) => {
+  try {
+    const { email, password } = req.body;
+
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      return res.status(400).send('Email already in use');
     }
 
+    const user = new User({ email, password });
+    await user.save();
+
+    res.status(201).send('User created successfully');
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Server error');
+  }
+});
+
+app.listen(3009,()=> {
+  console.log("Server is running")
 })
-
-const collection = mongoose.model("collection",newSchema)
-
-module.exports=collection
