@@ -15,6 +15,7 @@ import Signup from './Pages/Signup';
 import { Toaster } from 'react-hot-toast';
 import { useEffect, useState } from 'react';
 import { auth } from './firebase';
+import BookBed from './Pages/BookBed';
 
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
         <Route path='/BookAppointment' element={< BookAppointment/>}/>
         <Route path='/Login' element={<Login/>}/>
         <Route path='/Signup' element={<Signup/>}/>
+        <Route path='/BookBed' element={<BookBed/>}/>
       </Routes>
       <Toaster/>
       <Footer/>

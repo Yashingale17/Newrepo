@@ -69,6 +69,7 @@ const Navbar = ({ userName }) => {
                             <li onClick={scrollToTop} className={activeSection === 'Department' ? 'active' : ''} > <Link to="/Department" onClick={() => setActiveSection('Department')}>Department</Link></li>
                             <li onClick={scrollToTop} className={activeSection === 'Reportpage' ? 'active' : ''} > <Link to="/Reportpage" onClick={() => setActiveSection('Reportpage')}>Reports</Link></li>
                             <li onClick={scrollToTop} className={activeSection === 'BookAppointment' ? 'active' : ''} > <Link to="/BookAppointment" onClick={() => setActiveSection('BookAppointment')}>BookAppointment</Link></li>
+                            <li onClick={scrollToTop} className={activeSection === 'Reportpage' ? 'active' : ''} > <Link to="/BookBed" onClick={() => setActiveSection('BookBed')}>Schedule a Stay </Link></li>
                         </ul>
                         <div className="Login-register">
                             <span>{userName}</span>

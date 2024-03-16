@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './Appointment.css';
+import toast from 'react-hot-toast';
 
 
 const Appointment = () => {
@@ -32,44 +33,57 @@ const Appointment = () => {
             doctor: "",
             reason: "",
             insurance: "",
-            confirmation: "true"
+            confirmation: ""
 
         })
 
-        let name, value
-        console.log(AppointmentData)
-        const data = (e) => {
-            name = e.target.name;
-            value = e.target.value;
-            setAppointmentdata ({...AppointmentData,[name]:value})
+    let name, value
+    console.log(AppointmentData)
+    const data = (e) => {
+        name = e.target.name;
+        value = e.target.value;
+        setAppointmentdata({ ...AppointmentData, [name]: value })
+    }
+
+    const SubmitData = async (e) => {
+
+        const { FullName, email, phone, preferredDateTime, doctor, reason, insurance, confirmation } = AppointmentData;
+        e.preventDefault();
+
+        const emptyFields = [];
+        for (const key in AppointmentData) {
+            if (!AppointmentData[key]) {
+                emptyFields.push(key.replace(/([A-Z])/g, ' $1').toUpperCase()); // Capitalize field names for user-friendly display
+            }
         }
 
-        const SubmitData = async (e) => {
+        if (emptyFields.length > 0) {
+            const errorMessage = `Please fill in the following fields:\n- ${emptyFields.join('\n- ')}`;
+            toast.error(errorMessage);
+            return; // Prevent unnecessary API call if fields are empty
+        }
 
-            const { FullName,email, phone, preferredDateTime,doctor,reason,insurance,confirmation} = AppointmentData;
-            e.preventDefault();
-            const options = {
-                method:"POST",
-                headers: {
-                    'Content-Type' : 'application/json'
-                },
-                body : JSON.stringify({
-                    FullName,email, phone, preferredDateTime,doctor,reason,insurance,confirmation
-                })
-            }
+        const options = {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                FullName, email, phone, preferredDateTime, doctor, reason, insurance, confirmation
+            })
+        }
 
-            const res = await fetch('https://hospital-50195-default-rtdb.firebaseio.com/appointmentdata.json',
+        const res = await fetch('https://hospital-50195-default-rtdb.firebaseio.com/appointmentdata.json',
             options
-            )
-            console.log(res)
-            if(res)
-            {
-                alert("Appointment booked ")
-            }
-            else {
-                alert("Unsuccessfull")
-            }
+        )
+        console.log(res)
+        if (res) {
+            return toast("Appointment booked ")
         }
+        else {
+            return toast.error("Unsuccessfull")
+        }
+    }
 
 
     return (

@@ -81,8 +81,8 @@
   background-color: rgb(238, 236, 236);
   display: flex;
   align-items: center;
-  padding-left: 35px;
-  padding-right: 20px;
+  padding-left: 20px;
+  padding-right: 15px;
   height: 50px;
 }
 
@@ -95,28 +95,32 @@
   display: flex;
   align-items: center;
   height: 50px;
-  width: 28%;
+  width: 20%;
 }
 
 .img {
   background-image: url("../Images/12.png");
   background-size: cover;
-  height: 35px;
-  width: 30%;
+  height: 45px;
+  width: 57%;
   cursor: pointer;
 }
 
 .nav-links {
   list-style-type: none;
   display: flex;
-  width: 57%;
+  width: 67%;
 }
 
+.Login-register {
+  width: 20%;
+  padding-left: 100px;
+}
 .nav-links li {
   font-weight: 600;
-  margin-right: 12px;
+  margin-right: 10px;
   color: black;
-  padding-left: 30px;
+  padding-left: 25px;
 }
 
 .nav-links li:last-child {
@@ -157,10 +161,6 @@ li.active a {
 
 
 
-.Login-register {
-  width: 15%;
-  padding-left: 100px;
-}
 
 
 
