@@ -1,0 +1,39 @@
+.booking-form {
+    background-image: url('../Images/Docmain.jpg');
+    background-size: cover;
+    height: 750px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bed-form-container {
+    height: 650px;
+    width: 400px;
+    border-radius: 5px;
+}
+
+.Schadule-form {
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+.bed-form-container input {
+    width: 334px;
+    padding: 10px;
+}
+
+.schedule-form-container-main {
+    height: 700px;
+    width: 450px;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    box-shadow: -30px 30px 20px rgba(0,0,0,.2);
+    border-radius: 15px;
+}
