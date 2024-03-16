@@ -1,37 +1,80 @@
 import React, { useState } from 'react'
-import './Appointment.css'
+import './Appointment.css';
+
 
 const Appointment = () => {
-    const [formData, setFormData] = useState({
-        fullName: '',
-        email: '',
-        phone: '',
-        preferredDateTime: '',
-        doctor: '',
-        reason: '',
-        insurance: '',
-        confirmation: false
-    });
 
-    const handleChange = (e) => {
-        const { name, value, type, checked } = e.target;
-        setFormData(prevState => ({
-            ...prevState,
-            [name]: type === 'checkbox' ? checked : value
-        }));
-    };
+    const doctors = [
+        { value: 'dr-john-doe', label: 'Dr. John Doe' },
+        { value: 'dr-jane-smith', label: 'Dr. Jane Smith' },
+        { value: 'dr-David-Johnson', label: 'dr.David Johnson' },
+        { value: 'dr-Sarah-Lee', label: 'dr.Sarah Lee' },
+        { value: 'dr-Michael-Brown', label: 'dr.Michael Brown' },
+        { value: 'dr- Emily-Taylor', label: 'dr.Emily Taylor' },
+        { value: 'dr-Robert-Wilson', label: 'dr.Robert Wilson' },
+        { value: 'dr-Laura-Martinez', label: 'dr.Laura Martinez' },
+        { value: 'dr-William-Adams', label: 'dr.William Adams' },
+        { value: 'dr-Samantha-Evans', label: 'dr.Samantha Evans' },
+        { value: 'dr-Daniel-Lee', label: 'dr.Daniel Lee' },
+        { value: 'dr-Ashley-Brown', label: 'dr.Ashley Brown' },
+        { value: 'dr-Christopher-Wilson', label: 'dr.Christopher Wilson' },
+        { value: 'dr-Jessica-Hernandez', label: 'dr.Jessica Hernandez' },
+        { value: 'dr-Taylor-Clark', label: 'dr.Taylor Clark' }
+    ];
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Handle form submission, e.g., send data to backend or display a confirmation message
-        console.log(formData);
-    };
 
+    const [AppointmentData, setAppointmentdata] = useState(
+        {
+            fullName: "",
+            email: "",
+            phone: "",
+            preferredDateTime: "",
+            doctor: "",
+            reason: "",
+            insurance: "",
+            confirmation: "true"
+
+        })
+
+        let name, value
+        console.log(AppointmentData)
+        const data = (e) => {
+            name = e.target.name;
+            value = e.target.value;
+            setAppointmentdata ({...AppointmentData,[name]:value})
+        }
+
+        const SubmitData = async (e) => {
+
+            const { FullName,email, phone, preferredDateTime,doctor,reason,insurance,confirmation} = AppointmentData;
+            e.preventDefault();
+            const options = {
+                method:"POST",
+                headers: {
+                    'Content-Type' : 'application/json'
+                },
+                body : JSON.stringify({
+                    FullName,email, phone, preferredDateTime,doctor,reason,insurance,confirmation
+                })
+            }
+
+            const res = await fetch('https://hospital-50195-default-rtdb.firebaseio.com/appointmentdata.json',
+            options
+            )
+            console.log(res)
+            if(res)
+            {
+                alert("Appointment booked ")
+            }
+            else {
+                alert("Unsuccessfull")
+            }
+        }
 
 
     return (
         <div className="appointment-container">
-            <form className="appointment-form" onSubmit={handleSubmit}>
+            <form className="appointment-form" method='POST'>
                 <h2>Book an Appointment</h2>
                 <div className="form-group">
                     <label htmlFor="fullName">Full Name:</label>
@@ -39,8 +82,10 @@ const Appointment = () => {
                         type="text"
                         id="fullName"
                         name="fullName"
-                        value={formData.fullName}
-                        onChange={handleChange} required />
+                        autoComplete='off'
+                        value={AppointmentData.fullName}
+                        onChange={data} required
+                    />
                 </div>
                 <div className="form-group">
                     <label htmlFor="email">Email Address:</label>
@@ -48,8 +93,10 @@ const Appointment = () => {
                         type="email"
                         id="email"
                         name="email"
-                        value={formData.email}
-                        onChange={handleChange} required />
+                        autoComplete='off'
+                        value={AppointmentData.email}
+                        onChange={data} required
+                    />
                 </div>
                 <div className="form-group">
                     <label htmlFor="phone">Phone Number:</label>
@@ -57,8 +104,10 @@ const Appointment = () => {
                         type="tel"
                         id="phone"
                         name="phone"
-                        value={formData.phone}
-                        onChange={handleChange} required />
+                        autoComplete='off'
+                        value={AppointmentData.phone}
+                        onChange={data} required
+                    />
                 </div>
                 <div className="form-group">
                     <label htmlFor="preferredDateTime">Preferred Date and Time:</label>
@@ -66,14 +115,21 @@ const Appointment = () => {
                         type="datetime-local"
                         id="preferredDateTime"
                         name="preferredDateTime"
-                        value={formData.preferredDateTime}
-                        onChange={handleChange} required />
+                        autoComplete='off'
+                        value={AppointmentData.preferredDateTime}
+                        onChange={data} required
+                    />
                 </div>
                 <div className="form-group">
                     <label htmlFor="doctor">Doctor/Specialist:</label>
-                    <select id="doctor" name="doctor" value={formData.doctor} onChange={handleChange} required>
-                        <option value="">Select Doctor/Specialist</option>
-                        {/* Add options for doctors here */}
+                    <select id="doctor" name="doctor" autoComplete='off' value={AppointmentData.doctor} onChange={data} required
+                    >
+                        <option value="">Select Doctor</option>
+                        {doctors.map((doctor) => (
+                            <option key={doctor.value} value={doctor.value}>
+                                {doctor.label}
+                            </option>
+                        ))}
                     </select>
                 </div>
                 <div className="form-group">
@@ -81,8 +137,10 @@ const Appointment = () => {
                     <textarea
                         id="reason"
                         name="reason"
-                        value={formData.reason}
-                        onChange={handleChange} required />
+                        autoComplete='off'
+                        value={AppointmentData.reason}
+                        onChange={data} required
+                    />
                 </div>
                 <div className="form-group">
                     <label htmlFor="insurance">Insurance Information:</label>
@@ -90,21 +148,25 @@ const Appointment = () => {
                         type="text"
                         id="insurance"
                         name="insurance"
-                        value={formData.insurance}
-                        onChange={handleChange} />
+                        autoComplete='off'
+                        value={AppointmentData.insurance}
+                        onChange={data}
+                    />
                 </div>
                 <div className="input-checkbox-label">
                     <input
                         type="checkbox"
                         id="confirmation"
                         name="confirmation"
-                        checked={formData.confirmation}
-                        onChange={handleChange}
+                        autoComplete='off'
+                        checked={AppointmentData.confirmation}
+                        onChange={data}
                         required
+
                     />
                     <label htmlFor="confirmation">I confirm my appointment booking and agree to the terms and conditions.</label>
                 </div>
-                <button type="submit">Submit</button>
+                <button type="submit" onClick={SubmitData}>Submit</button>
             </form>
         </div>
 

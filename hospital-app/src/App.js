@@ -14,7 +14,6 @@ import Reportpage from './Pages/Reportpage';
 import Signup from './Pages/Signup';
 import { Toaster } from 'react-hot-toast';
 import { useEffect, useState } from 'react';
-import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './firebase';
 
 
