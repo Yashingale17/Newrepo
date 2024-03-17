@@ -6,15 +6,17 @@ import { Link } from 'react-router-dom';
 import { auth } from '../../firebase';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
-import { signInWithEmailAndPassword} from 'firebase/auth';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { signOut } from 'firebase/auth';
 
 
 const Loginsignup = () => {
 
   const navigateHome = useNavigate();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const [UserSignUp, setUserSignup] = useState({
-     email: "", password: ""
+    email: "", password: ""
   });
 
   const handleChange = (e) => {
@@ -33,13 +35,23 @@ const Loginsignup = () => {
           UserSignUp.email,
           UserSignUp.password
         )
-        .then(async(res) => {
+        .then(async (res) => {
           navigateHome('/');
 
         })
         .catch((err) => toast.error(err.message))
     }
   }
+
+  const handleLogout = () => {
+    signOut(auth)
+      .then(() => {
+        setIsLoggedIn(false); 
+        navigateHome('/login'); 
+      
+      })
+      .catch((err) => toast.error(err.message));
+  };
 
   return (
     <>
@@ -57,7 +69,8 @@ const Loginsignup = () => {
                   placeholder='password' required />
                 <FaLock className='icon' />
               </div>
-              <button type='submit' onClick={handleSubmit}>Login</button>
+              <button type='submit' onClick={isLoggedIn ? handleLogout : handleSubmit}>
+                {isLoggedIn ? 'Logout' : 'Login'}</button>
               <div className="Registet-link">
                 <p>
                   Don't have an account?

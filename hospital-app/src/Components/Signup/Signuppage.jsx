@@ -21,7 +21,36 @@ const Signuppage = () => {
     };
 
     const handleSubmit = (e) => {
+
+        const { username , email , password } = UserSignUp;
         e.preventDefault();
+
+        const emptyFields = [];
+        for (const key in UserSignUp) {
+            if (!UserSignUp[key]) {
+                emptyFields.push(key.replace(/([A-Z])/g, ' $1').toUpperCase()); 
+            }
+        }
+
+        if (emptyFields.length > 0) {
+            const errorMessage = `Please fill in the following fields:\n- ${emptyFields.join('\n- ')}`;
+            toast.error(errorMessage);
+            return; 
+        }
+        const options = {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                username , email , password
+            })
+        }
+
+        const res = fetch('https://hospital-50195-default-rtdb.firebaseio.com/Sighup.json',
+            options
+        )
+
         if(!UserSignUp.username || !UserSignUp.email || !UserSignUp.password) {
             return toast.error("Fill all filds")
         }

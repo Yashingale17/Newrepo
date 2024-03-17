@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState  } from 'react'
 import './Appointment.css';
 import toast from 'react-hot-toast';
 
@@ -26,7 +26,7 @@ const Appointment = () => {
 
     const [AppointmentData, setAppointmentdata] = useState(
         {
-            fullName: "",
+            FullName: "",
             email: "",
             phone: "",
             preferredDateTime: "",
@@ -53,14 +53,14 @@ const Appointment = () => {
         const emptyFields = [];
         for (const key in AppointmentData) {
             if (!AppointmentData[key]) {
-                emptyFields.push(key.replace(/([A-Z])/g, ' $1').toUpperCase()); // Capitalize field names for user-friendly display
+                emptyFields.push(key.replace(/([A-Z])/g, ' $1').toUpperCase()); 
             }
         }
 
         if (emptyFields.length > 0) {
             const errorMessage = `Please fill in the following fields:\n- ${emptyFields.join('\n- ')}`;
             toast.error(errorMessage);
-            return; // Prevent unnecessary API call if fields are empty
+            return; 
         }
 
         const options = {
@@ -83,6 +83,7 @@ const Appointment = () => {
         else {
             return toast.error("Unsuccessfull")
         }
+    
     }
 
 
@@ -94,10 +95,10 @@ const Appointment = () => {
                     <label htmlFor="fullName">Full Name:</label>
                     <input
                         type="text"
-                        id="fullName"
-                        name="fullName"
+                        id="FullName"
+                        name="FullName"
                         autoComplete='off'
-                        value={AppointmentData.fullName}
+                        value={AppointmentData.FullName}
                         onChange={data} required
                     />
                 </div>
