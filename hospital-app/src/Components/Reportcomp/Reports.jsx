@@ -30,7 +30,7 @@ const Reports = () => {
           medications: [],
           additionalNotes: 'Patient responded well to therapy.'
         },
-        // Add more reports as needed
+  
       ]
     },
     { 
@@ -59,7 +59,7 @@ const Reports = () => {
           medications: [],
           additionalNotes: 'Results awaited.'
         },
-        // Add more reports as needed
+      
       ]
     },
     { 
@@ -88,7 +88,7 @@ const Reports = () => {
           medications: ['Medication: Lisinopril 20mg, once daily'],
           additionalNotes: 'Blood pressure levels showing improvement.'
         },
-        // Add more reports as needed
+
       ]
     },
     { 
@@ -117,7 +117,7 @@ const Reports = () => {
           medications: ['Insulin: Regular insulin, 10 units before meals'],
           additionalNotes: 'Blood sugar levels stable.'
         },
-        // Add more reports as needed
+ 
       ]
     },
     { 
@@ -146,10 +146,10 @@ const Reports = () => {
           medications: ['Medication: Naproxen 500mg, twice daily'],
           additionalNotes: 'Patient reports reduced joint pain.'
         },
-        // Add more reports as needed
+    
       ]
     },
-    // Add more patients as needed
+   
   ]);
 
   const [uniqueId, setUniqueId] = useState('');
@@ -251,7 +251,6 @@ const Reports = () => {
       )}
     </div>
     </div>
-    
 );
 }
 

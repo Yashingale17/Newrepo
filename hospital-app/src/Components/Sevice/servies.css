@@ -137,16 +137,6 @@
   width: 350px;
 }
 
-.report-billing-section {
-  background-image: linear-gradient(90deg , black , white );
-  width: 100%;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 100px;
-}
-
 .buttons {
   display: flex;
   gap: 4rem; 

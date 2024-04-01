@@ -46,9 +46,9 @@ const Loginsignup = () => {
   const handleLogout = () => {
     signOut(auth)
       .then(() => {
-        setIsLoggedIn(false); 
-        navigateHome('/login'); 
-      
+        setIsLoggedIn(false);
+        navigateHome('/login');
+
       })
       .catch((err) => toast.error(err.message));
   };
@@ -61,16 +61,31 @@ const Loginsignup = () => {
             <div className="login-contaier">
               <h1>Login</h1>
               <div className="input-box">
-                <input autoComplete='off' className='input' type='email' value={UserSignUp.email} onChange={handleChange} name='email' placeholder='Email' required />
+                <input
+                  autoComplete='off'
+                  className='input'
+                  type='email'
+                  value={UserSignUp.email}
+                  onChange={handleChange}
+                  name='email'
+                  placeholder='Email'
+                  required />
                 <IoMdMail className='icon' />
               </div>
               <div className="input-box">
-                <input autoComplete='off' className='input' type='password' value={UserSignUp.password} name='password' onChange={handleChange}
+                <input
+                  autoComplete='off'
+                  className='input'
+                  type='password'
+                  value={UserSignUp.password}
+                  name='password'
+                  onChange={handleChange}
                   placeholder='password' required />
                 <FaLock className='icon' />
               </div>
               <button type='submit' onClick={isLoggedIn ? handleLogout : handleSubmit}>
-                {isLoggedIn ? 'Logout' : 'Login'}</button>
+                {isLoggedIn ? 'Logout' : 'Login'}
+              </button>
               <div className="Registet-link">
                 <p>
                   Don't have an account?
