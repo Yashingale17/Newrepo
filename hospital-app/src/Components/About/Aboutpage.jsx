@@ -17,7 +17,7 @@ const Aboutpage = () => {
                         </p>
 
                         <p>
-                            Founded under the visionary leadership of <strong>Dr.Daniel Lee in 2005</strong> , Sujay Hospital is committed to deliver exemplary healthcare services to the society with quality care that goes beyond providing cure.
+                            Founded under the visionary leadership of <strong>Dr.Daniel Lee in 2005</strong> , Hospital is committed to deliver exemplary healthcare services to the society with quality care that goes beyond providing cure.
                         </p>
 
                         <p>
